@@ -69,18 +69,32 @@
 
     <div class="portfolio-item-individual">
         <h2>Project Overview</h2>
-        <p>Provide a brief description of the project, its purpose, and what you aimed to achieve.</p>
-
+        <p>
+            The 3D Fog project is part of my CS250 Computer Graphics coursework at DigiPen. 
+            The objective of this assignment was to implement a fog effect in a 3D scene using OpenGL and integrate it as a new demo in the existing rendering engine framework. 
+            The goal was to deepen my understanding of visual effects in 3D rendering and how atmospheric effects like fog can enhance realism.
+        </p>
+    
         <h2>Tasks Completed</h2>
         <ul>
-            <li>Describe the tasks you completed for this project.</li>
-            <li>Be specific about your contributions and the technologies used.</li>
+            <li>Registered the new <code>Fog</code> demo in <code>DemosFactory.hpp</code> and <code>DemosFactory.cpp</code>, adding appropriate metadata and a lambda function to instantiate the demo.</li>
+            <li>Modified all relevant vertex shaders to ensure proper transformation of vertex positions into clip space for accurate depth-based fog calculations.</li>
+            <li>Implemented multiple fog techniques across separate shader programs:
+                <ul>
+                    <li><strong>Linear Fog</strong> – Implemented in <code>linear_fog.vert/.frag</code>, calculating fog intensity based on a linear interpolation of depth.</li>
+                    <li><strong>Exponential Fog</strong> – Implemented in <code>exponential_fog.vert/.frag</code>, using an exponential equation to simulate denser fog with distance.</li>
+                    <li><strong>FragCoord Z Fog</strong> – Implemented in <code>fragcoordz_fog.vert/.frag</code>, leveraging the fragment’s depth value from <code>gl_FragCoord.z</code> for per-pixel fog intensity.</li>
+                </ul>
+            </li>
         </ul>
-
+    
         <h2>Reflection</h2>
-        <p>Reflect on the project, discussing any challenges faced, solutions implemented, and what you learned from the
-            experience.</p>
-    </div>
+        <p>
+            Implementing the 3D Fog demo gave me hands-on experience with how fragment shaders can be used to simulate atmospheric effects. 
+            One of the main challenges was correctly calculating the fog factor based on distance from the camera, and ensuring it blended seamlessly with scene geometry. 
+            I overcame this by experimenting with exponential fog equations and tweaking parameters until the visual result matched expectations. 
+            Through this project, I gained a stronger understanding of shader programming, depth-based effects, and the integration of new demos into a modular rendering engine.
+        </p>
 
     <div class="portfolio-item-individual">
         <h2>Demo</h2>
