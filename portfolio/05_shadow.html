@@ -69,17 +69,58 @@
 
     <div class="portfolio-item-individual">
         <h2>Project Overview</h2>
-        <p>Provide a brief description of the project, its purpose, and what you aimed to achieve.</p>
+        <p>
+            This project, part of my CS250 Computer Graphics coursework at DigiPen, focuses on implementing real-time shadow mapping using OpenGL.
+            The goal was to simulate realistic lighting and shadow effects by rendering the scene from both the camera and the light's perspective,
+            and to integrate these effects into an interactive demo with ImGui controls.
+        </p>
 
         <h2>Tasks Completed</h2>
         <ul>
-            <li>Describe the tasks you completed for this project.</li>
-            <li>Be specific about your contributions and the technologies used.</li>
+            <li>
+                Enhanced the <code>Texture</code> class to support both depth and RGBA8 textures for shadow maps and color rendering.
+            </li>
+            <li>
+                Developed the <code>FrameBuffer</code> class to render and manage off-screen shadow maps with optional attachments.
+            </li>
+            <li>
+                Implemented <code>Camera</code> class functionality to generate accurate <code>ViewMatrix</code> and <code>ToWorldMatrix</code>.
+            </li>
+            <li>
+                Wrote core shadow mapping logic in <code>D05ShadowMapping.cpp</code>:
+                <ul>
+                    <li>
+                        <code>renderToDepthBuffer()</code> for rendering depth from the light's POV
+                    </li>
+                    <li>
+                        <code>renderToScreen()</code> for final render with shadow effects
+                    </li>
+                    <li>
+                        <code>drawLightFrustum()</code> and <code>drawDepthTexture()</code> for debugging
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Updated <code>shadow.vert</code> and <code>shadow.frag</code> shaders to:
+                <ul>
+                    <li>
+                        Pass and compute coordinates in both view and shadow space
+                    </li>
+                    <li>
+                        Sample the depth texture using <code>textureProj</code>
+                    </li>
+                    <li>
+                        Apply gamma correction and exponential fog
+                    </li>
+                </ul>
+            </li>
         </ul>
 
         <h2>Reflection</h2>
-        <p>Reflect on the project, discussing any challenges faced, solutions implemented, and what you learned from the
-            experience.</p>
+        <p>  
+            This project deepened my understanding of real-time rendering and shadow mapping,  
+            especially in view-space and shadow-space transformations and framebuffer implementation.
+        </p>
     </div>
 
     <div class="portfolio-item-individual">
