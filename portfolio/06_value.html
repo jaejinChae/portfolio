@@ -69,17 +69,28 @@
 
     <div class="portfolio-item-individual">
         <h2>Project Overview</h2>
-        <p>Provide a brief description of the project, its purpose, and what you aimed to achieve.</p>
+        <p>
+            This project, part of my CS250 Computer Graphics coursework at DigiPen, focused on implementing a Value Noise algorithm in C++ 
+            to generate procedural textures. The objective was to support 1D, 2D, and 3D noise generation with adjustable period sizes and interpolation methods, 
+            then integrate the results with OpenGL shaders for visualization.
+        </p>
 
         <h2>Tasks Completed</h2>
         <ul>
-            <li>Describe the tasks you completed for this project.</li>
-            <li>Be specific about your contributions and the technologies used.</li>
+            <li>Implemented the <code>ValueNoise.hpp</code> class to support 1D, 2D, and 3D value noise generation.</li>
+            <li>Used permutation hashing for pseudo-random value selection, and randomized the permutation table during construction.</li>
+            <li>Supported configurable period sizes via the <code>PeriodDimension</code> enum, dynamically resizing value tables accordingly.</li>
+            <li>Integrated multiple smoothing methods for interpolation parameters, based on the <code>SmoothMethod</code> enum.</li>
+            <li>Applied linear, bilinear, and trilinear interpolation in 1D, 2D, and 3D respectively.</li>
+            <li>Generated values for interpolation using <code>util::random()</code> for consistent and controllable noise output.</li>
         </ul>
 
         <h2>Reflection</h2>
-        <p>Reflect on the project, discussing any challenges faced, solutions implemented, and what you learned from the
-            experience.</p>
+        <p>
+            This project helped me understand the intricacies of procedural noise generation, especially the mathematical foundations behind interpolation and hashing. 
+            A key challenge was ensuring consistency and smoothness in higher dimensions while maintaining randomness, which I addressed by carefully implementing permutation hashing and modular indexing. 
+            I also gained experience writing flexible, parameterized systems in C++, which can be adapted to different visual or algorithmic needs.
+        </p>
     </div>
 
     <div class="portfolio-item-individual">
