@@ -68,17 +68,34 @@
 
     <div class="portfolio-item-individual">
         <h2>Project Overview</h2>
-        <p>Provide a brief description of the project, its purpose, and what you aimed to achieve.</p>
+        <p>
+            As part of the CS250 Computer Graphics course at DigiPen, this project focused on extending an OpenGL-based graphics framework to support enhanced shading techniques and procedural texture generation. 
+            The main goals were to implement flexible toon shading styles, improve texture and framebuffer functionality, and generate realistic 3D gradient noise for advanced visual effects.
+        </p>
 
         <h2>Tasks Completed</h2>
         <ul>
-            <li>Describe the tasks you completed for this project.</li>
-            <li>Be specific about your contributions and the technologies used.</li>
+            <li>Enhanced the texture loading system (<code>Texture.hpp/.cpp</code>) to support multiple color formats using <code>GL::TexStorage2D</code> and fallback options.</li>
+            <li>Updated the framebuffer system (<code>Framebuffer.hpp/.cpp</code>) to dynamically allocate color textures in user-defined formats, integrating with <code>Texture::LoadAsFormat()</code>.</li>
+            <li>Implemented an improved 3D Perlin gradient noise algorithm using GLSL shaders (<code>gen_gradient_noise.vert/.frag</code>), including patterns like Fractal Sum, Turbulence, Marble, and Wood.</li>
+            <li>Used a custom framebuffer with <code>R32F</code> format to store and visualize noise textures as 2D slices.</li>
+            <li>Hardcoded a 128-entry permutation table for efficient noise generation with a 64-period loop.</li>
+            <li>Created visualization shaders:
+                <ul>
+                    <li><code>simple.vert/.frag</code>: Displayed 2D noise slices as textured quads, with scalable texture coordinates.</li>
+                    <li><code>surface.vert</code>: Transformed a plane mesh into a 3D terrain by displacing vertices based on noise values.</li>
+                </ul>
+            </li>
+            <li>Integrated these new components into the existing rendering pipeline, ensuring compatibility with WebGL where necessary.</li>
         </ul>
 
         <h2>Reflection</h2>
-        <p>Reflect on the project, discussing any challenges faced, solutions implemented, and what you learned from the
-            experience.</p>
+        <p>
+            This project strengthened my understanding of OpenGL's texture and framebuffer systems, especially in managing texture formats and memory allocation strategies across different versions. 
+            Implementing 3D gradient noise from scratch significantly deepened my knowledge of procedural generation, permutation tables, and shader math. 
+            I also gained experience in creating reusable visualization shaders for debugging and artistic experimentation.
+            Overall, this project challenged me to think about rendering architecture, GPU limitations, and the balance between visual fidelity and performance.
+        </p>
     </div>
 
     <div class="portfolio-item-individual">
